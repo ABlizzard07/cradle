@@ -1,19 +1,21 @@
 class Bob{
     constructor(x,y,diameter){
         var options = {
-            isStatic: true,
-            restitution: 0.3,
-            friction: 0.5,
-            density: 1.2,
+            isStatic: false,
+            restitution: 1,
+            friction: 0,
+            density: 0.9,
         }
-        this.body = Bodies.circle(x,y,diameter,options);
+        this.body = Bodies.circle(x,y,diameter/2,options);
         this.diameter = diameter;
         World.add(world,this.body);
     }
     display(){
+        push();
         var pos = this.body.position;
+        translate(pos.x,pos.y);
         fill(random(255), random(255), random(255));
-        circle(pos.x,pos.y,this.diameter);
-        
+        circle(0,0,this.diameter);
+        pop();
     }
 }

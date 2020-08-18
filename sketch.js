@@ -1,9 +1,27 @@
+/* var num = 4;
+var string = "Aashish";
+var boolean = 1;
+var arr1 = [1,2,3,4];
+var arr2 = ["One","Two","Three","Four"];
+var arr3 = [[1,2,3],["One","Two","Three"],[true, false]];
+
+console.log(num);
+console.log(string);
+console.log(boolean);
+console.log(arr1);
+console.log(arr1[0]);
+console.log(arr2[2]);
+console.log(arr2.length);
+console.log(arr3[1][1]); */
+
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
-var position =0;
+
+var bob1, bob2, bob3, bob4, bob5
+var rope1, rope2, rope3, rope4, rope5
 
 function setup() {
 	createCanvas(800, 700);
@@ -48,7 +66,6 @@ function draw() {
 
 function keyPressed(){
 	if(keyCode === UP_ARROW){
-		Body.setStatic(bob1.body,false);
 		Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-100,y:100});
 	}  
 }
